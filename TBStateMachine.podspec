@@ -25,17 +25,17 @@ Pod::Spec.new do |s|
 
   s.default_subspec = 'Core'
   s.subspec 'Core' do |core|
-    core.source_files = 'Sources/TBStateMachine/Core'
+    core.source_files = 'Sources/TBStateMachine/Core/*.{h,m}'
   end
 
   s.subspec 'Builder' do |builder|
-    builder.source_files = 'Sources/TBStateMachine/Builder'
+    builder.source_files = 'Sources/TBStateMachine/Builder/*.{h,m}'
     builder.resource_bundle = { 'TBStateMachineBuilder' => 'Sources/TBStateMachine/Builder/Schema/*.json' }
     builder.dependency 'TBStateMachine/Core'
   end
   
   s.subspec 'DebugSupport' do |debug|
-    debug.source_files = 'Sources/TBStateMachine/DebugSupport'
+    debug.source_files = 'Sources/TBStateMachine/DebugSupport/*.{h,m}'
     debug.dependency 'TBStateMachine/Core'
   end
 end
